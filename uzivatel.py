@@ -9,5 +9,5 @@ class Uzivatel:
         pass
 
     def print_info(self) -> str:
-        return print(f"Meno: {self.first_name} Priezvisko: { self.last_name}")
+        return print(f"Meno: {self.first_name} Priezvisko: { self.last_name} Vek: {self.age}")
         
