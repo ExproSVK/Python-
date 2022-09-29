@@ -1,4 +1,3 @@
-from curses import A_ALTCHARSET
 from services.MovieLibraryService import MovieLibraryService
 from models.MovieModel import MovieModel
 

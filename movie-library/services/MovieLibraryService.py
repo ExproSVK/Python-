@@ -1,6 +1,5 @@
 from ast import Num
-from MovieModel import MovieModel
-from models.MovieModel import MovieModels
+from models.MovieModel import MovieModel
 
 class MovieLibraryService:
     def __init__(self) -> None:
