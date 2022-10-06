@@ -1,23 +1,27 @@
 from ast import Num
 from models.MovieModel import MovieModel
 
-class MovieLibraryService:
+
+class MovieLibraryService():
     def __init__(self) -> None:
         self.movies:list(MovieModel) = list()
         pass
-
-    def addMovie(self, movie:MovieModel):
-        self.movies.append(movie)
+    
+    
+    def addMovie(self, paMovie:MovieModel):
+        self.movies.append(paMovie)
         pass
-
-    def removeMovie(self, paIMovieIndex:Num):
-        self.movies.pop(paIMovieIndex)
+    
+    def removeMovie(self, paMovieIndex:Num):
+        self.movies.pop(paMovieIndex)
         pass
-
+    
     def to_string(self):
-        print("*******************MOVIE LIBRARY*******************")
-        print("\n")
+        print("**************** MOVIE LIBRARY ****************")
         for movie in self.movies:
             print(movie.to_string())
             print("")
         print("")
+        
+        
+        
