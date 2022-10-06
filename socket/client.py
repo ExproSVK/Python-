@@ -1,4 +1,4 @@
-from http import client
+import client
 import imp
 import socket
 
