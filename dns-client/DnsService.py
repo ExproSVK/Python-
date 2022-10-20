@@ -1,4 +1,7 @@
+import socket
 import struct
+from sys import flags
+from urllib import response
 
 from DnsQueryBodyModel import DnsQueryBodyModel
 from DnsHeaderModel import DnsHeaderModel
@@ -30,4 +33,13 @@ class DnsService:
         qclassb = struct.pack("!H", pa_dns_query_body_model.query_class)
         return qnameb + qtypeb + qclassb
 
+    def proces_response(self, pa_response_data:bytes):
+        (transaction_id, flags) = struct.unpack("!2H", pa_response_data[0:4])
+        requested_ip = socket.inet_ntoa(pa_response_data[-4:])
+        return (transaction_id, flags, requested_ip)
+
+    def response_pretty(self, pa_response_data_bytes:bytes, pa_reply_addr):
+        (transaction_id, flags, requested_ip) = self.proces_response(pa_response_data_bytes)
+
+        print(f"Response from {pa_reply_addr[0]}:{pa_reply_addr[1]}, bytes: {len(pa_response_data_bytes)}, id: 0x{transaction_id}, flags: 0x{flags:02x}, address: {requested_ip}")
 
