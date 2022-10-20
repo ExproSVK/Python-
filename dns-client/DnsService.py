@@ -28,8 +28,6 @@ class DnsService:
         qnameb = self._format_domain_to_query_name(pa_dns_query_body_model.domain_name)
         qtypeb= struct.pack("!H", pa_dns_query_body_model.type)
         qclassb = struct.pack("!H", pa_dns_query_body_model.query_class)
-        
-        
-        pass
+        return qnameb + qtypeb + qclassb
 
 
