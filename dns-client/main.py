@@ -6,7 +6,7 @@ from DnsQueryBodyModel import DnsQueryBodyModel
 from DnsService import DnsService
 
 dns_service = DnsService()
-socket_service = DnsSocketService()
+socket_service = DnsSocketService("158.193.152.4")
 
 question_text = input("Enter DNS name: ")
 dns_header = DnsHeaderModel()
