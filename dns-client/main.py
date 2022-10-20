@@ -13,5 +13,4 @@ dns_header = DnsHeaderModel()
 dns_body = DnsQueryBodyModel(question_text)
 
 socket_service.init_socket()
-
 socket_service.send_data(dns_service.generate_header(dns_header) + dns_service.generate_query_body(dns_body))
