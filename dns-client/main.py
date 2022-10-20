@@ -16,3 +16,5 @@ socket_service.init_socket()
 socket_service.send_data(dns_service.generate_header(dns_header) + dns_service.generate_query_body(dns_body))
 
 reply_bytes, reply_addr = socket_service.get_response()
+dns_service.response_pretty(reply_bytes, reply_addr)
+socket_service.destroy_socket
