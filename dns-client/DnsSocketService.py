@@ -9,9 +9,9 @@ class DnsSocketService:
         self.socket = None
         
 
-    def init_sockt(self):
+    def init_socket(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.sock.bind(self._listen_on, self._dns_client_port)
+        self.sock.bind((self._listen_on, self._dns_client_port))
         
 
     def send_data(self, data:bytes):
